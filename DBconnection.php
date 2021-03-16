@@ -56,8 +56,8 @@ class DBconnection {
         //create PDO instance
         try{
             $pdo= new PDO($dsn, $this->user,$this->password);
-            //setting default pdo attributes change them when necessary
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ,PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //setting default pdo fetch attributes change them when necessary
+            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
            
             //create database
             $db = "Users"; 
@@ -82,7 +82,7 @@ class DBconnection {
             }                                        
             return $pdo;
         }catch(PDOException $e){
-           echo "connection to mysql failed. Make sure to restart mysql server ".$e->getMessage();
+           echo "connection to mysql failed. Make sure to restart mysql server.";
         }
     }
 }

@@ -6,9 +6,7 @@ import AddMovie from "./AddMovie";
 
 
 const ShowUsers = ({users,onRemoveMovie,onAddMovie}) =>{  
-   const [movies,setMovies] = useState({});  
-   
-    
+   const [movies,setMovies] = useState({});   
    useEffect(()=>{   
     users.forEach(element => {           
             let favMovies = element.favourite_movies; //string that holds each user favorite movie
